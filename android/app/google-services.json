@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "293030695959",
+    "project_id": "chatapp-agus",
+    "storage_bucket": "chatapp-agus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293030695959:android:52a739f9409b890fc0f852",
+        "android_client_info": {
+          "package_name": "com.agus.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293030695959-pkq5bh7ubsuc7pjns9hfls2dbv6u25it.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agus.chat_app",
+            "certificate_hash": "530ed6b4c4853d74dfdd872bc072e39b2f4a7b97"
+          }
+        },
+        {
+          "client_id": "293030695959-517q476mees8r6puahvvrch3c9mlt1d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU_IdsbKOkz8Dhyy8jUuqscYEt8ETkdz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "293030695959-517q476mees8r6puahvvrch3c9mlt1d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
