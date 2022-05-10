@@ -41,7 +41,7 @@ class ProfileView extends GetView<ProfileController> {
                     glowColor: Colors.black,
                     duration: const Duration(seconds: 2),
                     child: Container(
-                      margin: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.all(18),
                       width: 175,
                       height: 175,
                       decoration: BoxDecoration(
