@@ -22,7 +22,7 @@ class ChangeProfileView extends GetView<ChangeProfileController> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(18),
           child: Column(
             children: [
               AvatarGlow(
