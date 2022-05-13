@@ -17,12 +17,12 @@ class ChangeProfileView extends GetView<ChangeProfileController> {
         // ),
         elevation: 0,
         backgroundColor: Colors.lightBlue[300],
-        title: Text('Change Profile'),
+        title: const Text('Change Profile'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(18),
+          padding: const EdgeInsets.all(18),
           child: Column(
             children: [
               AvatarGlow(
