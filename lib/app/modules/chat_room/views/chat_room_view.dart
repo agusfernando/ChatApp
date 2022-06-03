@@ -6,6 +6,53 @@ import 'package:get/get.dart';
 import '../controllers/chat_room_controller.dart';
 
 class ChatRoomView extends GetView<ChatRoomController> {
+  List<CardChat> chats = [
+    CardChat(
+      isMe: true,
+      text: 'Hallo',
+      color: Colors.blue,
+    ),
+    CardChat(
+      isMe: true,
+      text: 'Bales dong ............................................',
+      color: Colors.yellow,
+    ),
+    CardChat(
+      isMe: false,
+      text: 'Iya, \nsiapa ya?.................................',
+      color: Colors.green,
+    ),
+    CardChat(
+      isMe: false,
+      text: 'Akku lahhhh',
+      color: Colors.red,
+    ),
+    CardChat(
+      isMe: true,
+      text: 'Hallo',
+      color: Colors.blue,
+    ),
+    CardChat(
+      isMe: true,
+      text: 'Bales dong ............................................',
+      color: Colors.yellow,
+    ),
+    CardChat(
+      isMe: false,
+      text: 'Iya, \nsiapa ya?.................................',
+      color: Colors.green,
+    ),
+    CardChat(
+      isMe: false,
+      text: 'Akku lahhhh',
+      color: Colors.red,
+    ),
+    CardChat(
+      isMe: false,
+      text: 'Lah iya siapa?',
+      color: Colors.black,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,27 +82,18 @@ class ChatRoomView extends GetView<ChatRoomController> {
             //List Chat
             Expanded(
                 child: Container(
+              color: Colors.cyan[100],
               child: ListView(
-                children: [
-                  CardChat(
-                    isMe: true,
-                  ),
-                  CardChat(
-                    isMe: false,
-                  ),
-                  CardChat(
-                    isMe: true,
-                  ),
-                  CardChat(
-                    isMe: false,
-                  ),
-                ],
+                controller: controller.scrollController,
+                reverse: false,
+                shrinkWrap: true,
+                children: chats.map((e) => e).toList(),
               ),
             )),
             //Text Message
             Container(
               margin: EdgeInsets.only(bottom: context.mediaQueryPadding.bottom),
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
               child: Row(
                 children: [
                   Expanded(
@@ -69,8 +107,8 @@ class ChatRoomView extends GetView<ChatRoomController> {
                             Icons.emoji_emotions_outlined,
                             color: Colors.lightBlue.shade700,
                           )),
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 15),
                       hintText: 'Type a message',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -82,7 +120,7 @@ class ChatRoomView extends GetView<ChatRoomController> {
                           )),
                     ),
                   )),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.lightBlue[900],
@@ -90,7 +128,7 @@ class ChatRoomView extends GetView<ChatRoomController> {
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.send,
                         color: Colors.white,
                       ),

@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
 
           if (snapshot.connectionState == ConnectionState.done) {
             return FutureBuilder(
-                future: Future.delayed(Duration(seconds: 3)),
+                future: Future.delayed(const Duration(seconds: 3)),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
                     return Obx(() => GetMaterialApp(
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
 
                   return FutureBuilder(
                       future: authController.firstInitialized(),
-                      builder: (context, snapshot) => SplasScreen());
+                      builder: (context, snapshot) => const SplasScreen());
                 });
           }
 

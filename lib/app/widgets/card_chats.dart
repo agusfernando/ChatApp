@@ -2,35 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CardChat extends StatelessWidget {
-  CardChat({Key? key, required this.isMe}) : super(key: key);
+  const CardChat(
+      {Key? key, required this.text, required this.isMe, required this.color})
+      : super(key: key);
 
+  final String text;
   final bool isMe;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(5),
       child: Container(
-        width: Get.width * .65,
-        padding: EdgeInsets.all(10),
+        constraints: BoxConstraints(
+          maxWidth: Get.width * .65,
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         decoration: BoxDecoration(
             color: isMe ? Colors.blue.shade100 : Colors.grey.shade300,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-              bottomLeft: isMe ? Radius.circular(20) : Radius.circular(0),
-              bottomRight: isMe ? Radius.circular(0) : Radius.circular(20),
+              topLeft: const Radius.circular(20),
+              topRight: const Radius.circular(20),
+              bottomLeft:
+                  isMe ? const Radius.circular(20) : const Radius.circular(0),
+              bottomRight:
+                  isMe ? const Radius.circular(0) : const Radius.circular(20),
             )),
         child: Column(
           crossAxisAlignment:
               isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             Text(
-              'datadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadata',
-              style: TextStyle(fontSize: 18),
+              text,
+              style: const TextStyle(fontSize: 18),
+              softWrap: true,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               '07.00 PM',
               style: TextStyle(fontSize: 12, color: Colors.grey[600]),

@@ -42,27 +42,27 @@ class ChangeProfileView extends GetView<ChangeProfileController> {
                           fit: BoxFit.cover)),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextFieldDefault(
                 hint: 'Email',
                 textEditingController: controller.emailTextController,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFieldDefault(
                 hint: 'Name',
                 textEditingController: controller.nameTextController,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFieldDefault(
                 hint: 'Status',
                 textEditingController: controller.statusTextController,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 width: Get.width,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Update',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -71,8 +71,8 @@ class ChangeProfileView extends GetView<ChangeProfileController> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 30)),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 30)),
                 ),
               )
             ],
@@ -93,11 +93,11 @@ class TextFieldDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: TextStyle(fontSize: 18),
+      style: const TextStyle(fontSize: 18),
       cursorColor: Colors.blueAccent,
       decoration: InputDecoration(
         labelText: hint,
-        labelStyle: TextStyle(color: Colors.black),
+        labelStyle: const TextStyle(color: Colors.black),
         contentPadding:
             const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
         fillColor: Colors.white,

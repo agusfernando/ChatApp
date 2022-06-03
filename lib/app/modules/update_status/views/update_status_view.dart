@@ -14,16 +14,16 @@ class UpdateStatusView extends GetView<UpdateStatusController> {
         // ),
         elevation: 0,
         backgroundColor: Colors.lightBlue[300],
-        title: Text('Update Status'),
+        title: const Text('Update Status'),
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             TextField(
               controller: controller.updateStatusTextController,
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
               cursorColor: Colors.blueAccent,
               decoration: InputDecoration(
                 hintText: 'Write Status...',
@@ -41,22 +41,22 @@ class UpdateStatusView extends GetView<UpdateStatusController> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Container(
               width: Get.width,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   'Update',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 style: ElevatedButton.styleFrom(
                     primary: Colors.lightBlueAccent[900],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    padding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 30)),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 30)),
               ),
             )
           ],

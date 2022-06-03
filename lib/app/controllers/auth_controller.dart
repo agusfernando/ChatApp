@@ -1,11 +1,16 @@
+import 'dart:io';
+
 import 'package:chat_app/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class AuthController extends GetxController {
   var isSkipIntro = false.obs;
   var isAuth = false.obs;
+  Directory? directory;
 
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   GoogleSignInAccount? _currentUser;
@@ -59,6 +64,7 @@ class AuthController extends GetxController {
       await _googleSignIn.signIn().then((value) => _currentUser = value);
 
       final isSignIn = await _googleSignIn.isSignedIn();
+      Get.offAllNamed(Routes.HOME);
       if (isSignIn) {
         final googleAuth = await _currentUser!.authentication;
         print('Berhasil Login ${_currentUser}');
@@ -87,5 +93,25 @@ class AuthController extends GetxController {
     await _googleSignIn.disconnect();
     await _googleSignIn.signOut();
     Get.offAllNamed(Routes.LOGIN);
+  }
+
+  Future<void> createFolder({String name = 'Nandos'}) async {
+    directory = await getApplicationDocumentsDirectory();
+
+    // directory = Directory("storage/emulated/0/Nandos");
+    print('Directory Path : ${directory?.path}');
+    if (directory?.existsSync() ?? false) {
+      // TODO:
+      print("exist");
+    } else {
+      // TODO:
+      var status = await Permission.storage.status;
+      if (!status.isGranted) {
+        print('NOT granted');
+        await Permission.storage.request();
+      }
+      print("not exist");
+      directory?.create();
+    }
   }
 }
